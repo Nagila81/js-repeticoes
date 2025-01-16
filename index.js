@@ -10,7 +10,7 @@ for(let i = 1; i <= 31; i++) {
 }
 
 for(let i = 0; i < meses.length; i++) {
-    mes.innerHTML += `<option>${meses[i]}</option>`;
+    mes.innerHTML += `<option value = "${i}">${meses[i]}</option>`;
 }
 
 for(let i = new Date().getFullYear(); i >= 1975; i--) {
@@ -27,7 +27,7 @@ function getDiasNoMes(mesIndex, ano) {
 atualizarDias();
 
 function atualizarDias() {
-    const mesIndex = mes.selectedIndex;
+    const mesIndex = Number(mes.value);
     const anoValue = parseInt(ano.value);
     const diasNoMes = getDiasNoMes(mesIndex, anoValue);
     dia.innerHTML = '';
